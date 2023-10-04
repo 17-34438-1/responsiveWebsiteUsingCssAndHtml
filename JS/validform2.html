@@ -1,0 +1,245 @@
+<html>
+<head>
+<title>Registration Form2</title>
+<style>
+
+* {
+  margin: 0
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: lightblue;
+}
+
+.container h1 {
+  color: red;
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.registartion-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 650px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-family: sans-serif;
+  background-color: #154a68;
+  padding: 20px;
+}
+
+.registartion-form input,
+.registartion-form select,
+.registartion-form textarea {
+  border: none;
+  padding: 5px;
+  margin-top: 10px;
+  font-family: sans-serif;
+}
+
+.registartion-form input:focus,
+.registartion-form textarea:focus {
+ box-shadow: 3px 3px 10px rgb(228, 228, 228), -3px -3px 10px rgb(224, 224, 224);
+}
+
+.registartion-form .submit {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 20px;
+  color:black ;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.registartion-form .submit:hover {
+  box-shadow: 3px 3px 6px rgb(255, 214, 176);
+  background-color:green;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+  <h1> Registration Form</h1>
+  <form name="registration" class="registartion-form" onsubmit="return formValidation()">
+    <table>
+      <tr>
+        <td><label for="name">Name<sup>*</sup>:</label></td>
+        <td><input type="text" name="name" id="name" placeholder="type your full name"></td>
+      </tr>
+	  
+	  <tr>
+        <td><label for="name">Father Name<sup>*</sup>:</label></td>
+        <td><input type="text" name="name" id="fname" placeholder="typr your father name"></td>
+      </tr>
+	  
+	  <tr>
+        <td><label for="name">Mother Name<sup>*</sup>:</label></td>
+        <td><input type="text" name="name" id="mname" placeholder="type your mother name"></td>
+      </tr>
+	  
+      <tr>
+        <td><label for="email">Email<sup>*</sup>:</label></td>
+        <td><input type="text" name="email" id="email" placeholder="type your valid email"></td>
+      </tr>
+	  
+      <tr>
+        <td><label for="password">Password<sup>*</sup>:</label></td>
+        <td><input type="password" name="password" id="password"></td>
+      </tr>
+	  
+      <tr>
+        <td><label for="phoneNumber">Phone Number<sup>*</sup>:</label></td>
+        <td><input type="text" name="phoneNumber" id="phoneNumber"></td>
+      </tr>
+	  
+      <tr>
+        <td><label for="gender">Gender<sup>*</sup>:</label></td>
+        <td>Male: <input type="radio" name="gender" value="male">
+          Female: <input type="radio" name="gender" value="female">
+          Other: <input type="radio" name="gender" value="other"></td>
+      </tr>
+      <tr>
+        <td><label for="Admission class">Admission<sup>*</sup></label></td>
+        <td>
+          <select name="admissionclass" id="admissionclass">
+            <option value="">Select Class</option>
+			 <option value="Class I">Class I</option>
+            <option value="Class II">Class II</option>
+            <option value="Class III">Class III</option>
+            <option value="Class IV">Class IV</option>
+            <option value="Class V">Class V</option>
+          </select>
+        </td>
+      </tr>
+	  
+	  <tr>
+        <td><label for="Image">Upload Photo<sup>*</sup>:</label></td>
+        <td><input type="file" id="myFile" name="Image" accept="image/*"></td>
+      </tr>
+	 
+	  <tr>
+        <td><label for="address">Address<sup>*</sup>:</label></td>
+        <td><textarea name="address" id="address" placeholder="Write your address"></textarea></td>
+      </tr>
+	  
+      <tr>
+        <td><label for="postcode">Post Code<sup>*</sup>:</label></td>
+        <td><input type="number" name="postcode" id="postcode"></td>
+      </tr>
+      
+      <tr>
+        <td colspan="2"><input type="submit" class="submit" value="Register" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<script>
+// Select all input elements for varification
+let name = document.getElementById("name");
+let fname = document.getElementById("fname");
+let mname = document.getElementById("mname");
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let phoneNumber = document.getElementById("phoneNumber");
+let gender = document.registration;
+let admissionclass = document.getElementById("admissionclass");
+let myFile = document.getElementById("myFile");
+let address = document.getElementById("address");
+let postcode = document.getElementById("postcode");
+
+
+// function for form varification
+function formValidation() {
+  //length of name
+ 
+  if (name.value.length < 1 || name.value.length > 40) {
+    alert("Name length should not be 0 and less than 40 charaters");
+    name.focus();
+    return false;
+  }
+ 
+ //father name
+ if (fname.value.length < 1 || fname.value.length > 40) {
+    alert("Father name should not be 0 and less than 40 charaters");
+    fname.focus();
+    return false;
+  }
+ 
+ 
+ //mother name
+ if (mname.value.length < 1 || mname.value.length > 40) {
+    alert("Mother name should not be 0 and less than 40 charaters");
+    mname.focus();
+    return false;
+  }
+  // email format
+ 
+	if(email.length == 0 || !email.value.match(/^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/)){
+     alert('Please enter valid email');
+	 email.focus();
+     return false;
+   }
+  // password  
+  if (!password.value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/)) {
+    alert("Password must contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character, and must be between 8 and 15 characters long.");
+    password.focus();
+    return false;
+  }
+  // phone number
+  if (!phoneNumber.value.match(/^[0-9]{11}$/)) {
+    alert("Phone number must be 11 characters");
+    phoneNumber.focus();
+    return false;
+  }
+  // gender
+  if (gender.gender.value === "") {
+    alert("Please select your gender!");
+    return false;
+  }
+  // admissionclass
+  if (admissionclass.value === "") {
+    alert("Please select your Class!")
+    return false;
+  }
+ 
+ //Image
+ if (myFile.value=="" || myFile.value=="null") {
+    alert("Attach Your Image");
+    myFile.focus();
+    return false;
+  }
+ 
+ //Address
+ if (address.value.length < 1 || address.value.length > 500) {
+    alert("address should not be 0");
+    address.focus();
+    return false;
+  }
+ 
+ 
+  // post code
+  if (!postcode.value.match(/^[0-9]{4}$/)) {
+    alert("post code must be 4 characters long number!");
+    postcode.focus();
+    return false;
+  }
+  return true;
+}
+
+
+</script>
+
+
+</body>
+</html>

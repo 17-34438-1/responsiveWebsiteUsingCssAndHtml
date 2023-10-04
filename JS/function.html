@@ -1,0 +1,368 @@
+
+<html>
+
+<head>
+  <title>Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css">
+  <style>
+    body {
+      font-family: arial;
+      transition: all 0.5s ease;
+      background-color: #cc99ff;
+	  color: #0d0d0d;
+    }
+
+    .container {
+      padding: 40px;
+      width: 800px;
+      margin: 20px auto;
+      background-color: #80bfff;
+    }
+
+    .container h2 {
+      text-align: center;
+	  color:green;
+	  
+    }
+
+    fieldset {
+      border: 3px solid #cc99ff;
+      padding: 20px 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .input-field {
+      display: flex;
+      margin-bottom: 15px;
+    }
+
+    label {
+      margin-right: 25px;
+      margin-top: 5px;
+      width: 30%;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .icon {
+      background: #cc99ff;
+      color: black;
+      min-width: 40px;
+      border: 2px solid #e2e2e2;
+      border-right: none;
+      text-align: center;
+      padding: 7px;
+    }
+
+    .inputs {
+      padding: 3px 10px;
+      border: 2px solid #e2e2e2;
+      width: 70%;
+    }
+
+    input [type="radio"] {
+      margin-right: 8px;
+    }
+
+    .textarea {
+      padding: 8px;
+      border: 2px solid #e2e2e2;
+	  width:50%;
+    }
+
+    .textarea-icon {
+      padding-top: 14px;
+    }
+
+    .button {
+      text-align: center;
+    }
+
+    .submit {
+      color: black;
+      background: #cc99ff;
+      padding: 9px 25px;
+      margin-right: 10px;
+      border: 2px silid;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #c9c9c9;
+    }
+
+    .submit:hover {
+      background: #003326;
+	  color:white;
+    }
+
+    .reset {
+      color: black;
+      background: #ff4dff;
+      padding: 9px 25px;
+      border: 2px silid;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #c9c9c9;
+    }
+
+    .reset:hover {
+      background: red;
+	  color:white;
+    }
+	
+
+    .city {
+      margin-left: -6px;
+    }
+
+    .gender {
+      margin-left: -30px;
+    }
+
+    .courses {
+      margin-left: -26px;
+	  
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .message {
+      margin-left: -30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2> Registration From</h2>
+	
+    <form name="registration" onsubmit="return formValidation()">
+	
+      <fieldset>
+	  
+        <div class="input-field">
+          <label>Name</label>
+          <i class="fa fa-user icon"></i>
+          <input type="text" id="name" class="inputs" name="name">
+        </div>
+		
+        <div class="input-field">
+          <label>Father Name</label>
+          <i class="fa-solid fa-people-roof icon"></i>
+          <input type="text" id="fname" class="inputs" name="fname">
+        </div>
+		
+        <div class="input-field">
+          <label>Mother Name</label>
+          <i class="fa-solid fa-people-roof icon"></i>
+          <input type="text" id="mname" class="inputs" name="mname">
+        </div>
+		
+		<div class="input-field">
+          <label>Birth Date</label>
+          <i class="fa fa-list icon"></i>
+          <input type="date" id="birthdate" name="birthdate" class="inputs">
+        </div>
+		
+        <div class="input-field">
+          <label>Email</label>
+          <i class="fa fa-envelope icon"></i>
+          <input type="text" id="email" name="email" class="inputs">
+        </div>
+		
+        <div class="input-field">
+          <label class="gender">Gender</label>
+          Male<input type="radio" name="gender" value="male">
+          Female<input type="radio" name="gender" value="female"> 
+		  Other<input type="radio" name="gender" value="female"> 
+        </div>
+		
+        <div class="input-field">
+          <label>Password</label>
+          <i class="fa fa-eye-slash icon"></i>
+          <input type="password" id="password" name="password" class="inputs">
+        </div>
+      </fieldset>
+
+
+      <fieldset>
+        <div class="input-field">
+          <label class="message">Address</label>
+          <i class="fa-solid fa-address-book icon textarea-icon"></i>
+          <textarea name="address" id="address" class="textarea"></textarea>
+        </div>
+		
+        <div class="input-field">
+          <label class="city">City</label>
+          <i class="fa fa-list icon"></i>
+          <select name="city" id="city"  class="inputs">
+            <option value="Default">Select City</option>
+            <option value="1">Chittagong</option>
+            <option value="2">Dhaka</option>
+            <option value="3">Rajshahi</option>
+            <option value="4">Rangpur</option>
+            <option value="5">Khulna</option>
+			<option value="5">Shylet</option>
+          </select>
+        </div>
+		
+        <div class="input-field">
+          <label>Post code</label>
+          <i class="fa fa-home icon"></i>
+          <input type="text" id="postcode" name="postcode" class="inputs">
+        </div>
+		
+        <div class="input-field">
+          <label>Phone No</label>
+          <i class="fa fa-phone icon"></i>
+          <input type="text" id="phone" name="phone"class="inputs">
+        </div>
+		
+        <div class="input-field">
+          <label class="city">Admission</label>
+          <i class="fa fa-list icon"></i>
+		  
+          <select name="admission" id="admission" class="inputs">
+            <option value="Default">Select Class</option>
+            <option value="1">Class 1</option>
+            <option value="2">Class 2</option>
+            <option value="3">Class 3</option>
+            <option value="4">Class 4</option>
+            <option value="5">Class 5</option>
+          </select>
+        </div>
+		
+		 <div class="input-field">
+          <label class="gender">Student Type</label>
+          New Student<input type="radio" name="student" value="newstudent" >
+          TC Student<input type="radio" name="student" value="tcstudent"> 
+		  
+        </div>
+		
+        <div class="input-field">
+          <label>Upload Photo</label>
+          <i class="fa fa-upload icon"></i>
+          <input type="file" id="photo" name="photo"accept="image/*" class="inputs">
+        </div>
+      </fieldset>
+
+      <div class="button">
+        <button type="submit" class="submit" id="submit" name="submit">Submit</button>
+        <button type="reset" class="reset">Reset</button>
+      </div>
+    </form>
+  </div>
+ 
+ 
+<script>
+
+function formValidation() 
+{
+	let name = document.forms["registration"]["name"].value;
+	if(name.length=="" || !name.match(/^[A-Za-z]+$/)){
+	alert("Name value must be String! or should not empty!");
+	name.focus();
+	return false;
+	}
+	
+  //birth date
+ let birthdate = document.forms["registration"]["birthdate"].value;
+ if (birthdate =="" || birthdate =="null") {
+    alert("Input your Birth Date");
+    birthdate.focus();
+    return false;
+ }
+
+// email
+
+	let email = document.forms["registration"]["email"].value;
+	if(email.length =="" || !email.match(/^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/)){
+     alert('Please enter valid email');
+	 email.focus();
+     return false;
+   }
+   
+   // gender
+	let gender = document.forms["registration"]["gender"].value;
+    if (gender== ""){ 
+    alert("Please select your gender!");
+    return false;
+  }
+
+  // password 
+	let pass = document.forms["registration"]["password"].value;
+	 if (!pass.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/))
+	{
+    alert("Password must contain at least one lowercase,one uppercase,one numeric digit, and one special character, and minumum 8  characters long.");
+    pass.focus();
+    return false;
+  }
+ 
+ 
+ //Address
+let add = document.forms["registration"]["address"].value;
+ if (add.length < 1 || add.length > 500) {
+    alert("Please type address!");
+    add.focus();
+    return false;
+  }
+ 
+ // City
+ let city = document.forms["registration"]["city"].value;
+  if (city == "Default") {
+    alert("Please select your City!")
+    return false;
+  }
+
+ // post code
+
+ let post = document.forms["registration"]["postcode"].value;
+  if (!post.match(/^[0-9]{4}$/)) {
+    alert("Please type post code! maximum 4 digit.");
+    post.focus();
+    return false;
+ }
+  // phone number
+  let phone = document.forms["registration"]["phone"].value;
+  if (!phone.match(/^[0-9]{11}$/)) {
+    alert("Phone number must be 11 characters!");
+    phone.focus();
+    return false;
+  }
+ 
+ // admissionclass
+   let admi = document.forms["registration"]["admission"].value;
+  if (admi =="Default") {
+    alert("Please select your Class!")
+    return false;
+  }
+ 
+ // studen
+   let student = document.forms["registration"]["student"].value;
+   if (student=="") {
+    alert("Please select student type!");
+    return false;
+ }
+ 
+ 
+ //upload photo
+   let photo = document.forms["registration"]["photo"].value;
+ if (photo=="" || photo=="null") {
+    alert("Attach Your Image");
+    photo.focus();
+    return false;
+  }
+ 
+ //submit from button
+ let submit = document.forms["registration"]["submit"].value;{
+    alert("THANK YOU..!! FORM SUBMIT SUCCESS.");  
+  }
+
+return true;
+ }
+
+</script>
+ 
+</body>
+
+</html>

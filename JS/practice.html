@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>জাভাস্ক্রিপ্ট উদাহরণ</title>
+</head>
+<script>
+
+function validateForm(){
+   let age = document.getElementById('age').value;
+   let email = document.getElementById('email').value;
+ 
+   let filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
+ 
+   if(age.length == 0 || isNaN(age)){
+     alert('Please enter your age');
+     return false;
+   }else if(email.length == 0 || filter.test(email) != true){
+     alert('Please enter valid email');
+     return false;
+   }else{
+     alert('form submitted');
+     return true;
+   }
+}
+
+ </script>
+
+<body>
+
+<form name="wForm" method="post" onsubmit="return validateForm()">
+
+   <p> Age:<input type="text" name="age" id="age"/></p>
+   <p>Email:<input type="text" name="email" id="email"/></p>
+   <p><input type="submit" name="submit" value="Submit"/></p>
+</form>
+ 
+
+</body>
+</html>

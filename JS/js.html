@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+ <html>
+<head>
+
+	
+	<script type="text/JavaScript">
+
+function popup() {
+alert("my first JavaScript")
+}
+
+
+ </script>
+ 
+
+ 
+
+<h1>Your browser javascript enabled</h1>
+<input type="button" onclick="popup()" value="Button"><br><br><br>
+
+ <script>
+ var webcoach;
+ document.write (typeof webcoach + '<br/>') ;
+
+ var webcoach = 'Hi Webcoachbd';
+ document.write (typeof webcoach + '<br/>');
+
+ var webcoach = 15;
+ document.write (typeof webcoach + '<br/>');
+
+ var webcoach = 20.325;
+ document.write (typeof webcoach + '<br/>');
+ 
+ var webcoach = false;
+ document.write (typeof webcoach+ '<br/>');
+
+ var webcoach = null;
+ document.write (typeof webcoach+ '<br/>');
+
+ 
+ </script>
+ 
+ <br><br><br>
+ 
+ <script>
+//( + ) plus operator
+     var x = 15;
+     var y = 10;
+     output = x + y;
+     document.write('x + y : ' + output + '<br/>');
+
+// ( - ) minus operator
+    output = x - y;
+    document.write('x - y : ' + output + '<br/>');
+
+
+// ( * ) multiply operator
+    output = x * y;
+    document.write('x * y : ' + output + '<br/>');
+
+
+// ( / ) division operator
+    output = x / y;
+    document.write('x / y : ' + output + '<br/>');
+
+
+// ( % ) modulas operator
+    output = x % y;
+    document.write('x % y : ' + output + '<br/>');
+
+// ( ++ ) post increment operator
+    x++;
+    document.write('x++ : ' + x + '<br/>');
+
+// ( ++ ) pre increment operator
+    ++x;
+    document.write('++x : ' + x + '<br/>');
+
+// ( -- ) post decrement operator
+    y--;
+    document.write('y-- : ' + y + '<br/>');
+
+// ( -- ) pre decrement operator
+    --y;
+    document.write('-- y : ' + y + '<br/>');
+
+   </script>
+
+ <br><br><br> <br><br><br>
+
+<script type="text/javascript">
+function confirmation() {
+    var answer = confirm("Leave webcoachbd.com?")
+    if (answer){
+       alert("Allah hafiz!")
+       window.location = "http://www.google.com/";
+    }
+      else{
+      alert("Thanks for staying with us!")
+    }
+}
+
+</script>
+
+
+  <form>
+     <input type="button" onclick="confirmation()" value="Leave Us">
+   </form>
+
+
+
+<br><br><br> <br>
+
+<script>
+
+function validateForm(){
+   var age = document.getElementById('age').value;
+   var email = document.getElementById('email').value;
+ 
+   var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
+ 
+   if(age.length == 0 || isNaN(age)){
+     alert('Please enter any number');
+     return false;
+   }else if(email.length == 0 || filter.test(email) != true){
+     alert('Please enter valid email');
+     return false;
+   }else{
+     alert('form submitted');
+     return true;
+   }
+}
+
+ </script>
+
+
+ from
+<form action="test.php" name="wForm" method="post" onsubmit="return validateForm()">
+   <p> Age:<input type="text" name="age" id="age"/></p>
+   <p>Email:<input type="text" name="email" id="email"/></p>
+   <p>	<input type="submit" name="submit" value="Submit"/></p>
+</form>
+ 
+ 
+ 
+ 
+ <br><br>
+ 
+ <script>
+
+function validateForm(){
+   var t = document.wForm.elements[0].value;
+   alert(t);
+}
+
+ </script>
+
+
+ 
+<form action="" name="wForm" method="post" onsubmit="validateForm()">
+   <p><input type="text" name="first_name" id="first_name"/></p>
+   <p><input type="submit" name="submit" value="Submit"/></p>
+</form>
+ 
+ 
+ <h1 id="test1">wellcome to javascript</h1>
+ <button type="button" onclick="myFunc1()">click to change</button>
+ <script>
+ function myFunc1(){
+ document.getElementById("test1").innerHTML="Hello JavaScript";
+ }
+ </script>
+ </body>
+ </html>
